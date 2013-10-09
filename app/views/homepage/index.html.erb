@@ -1,1 +1,9 @@
-hello world
+<% @user.link_infos.each do |link_infos| %>
+<%= link_infos.title %></br>
+<%= link_infos.des%></br>
+<%= link_infos.content%></br>
+by author <%= link_infos.user.email %></br>
+</br></br>
+<% end %>
+
+<%= button_to 'add',new_link_info_path, :method => :get %>
