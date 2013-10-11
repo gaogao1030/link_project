@@ -3,8 +3,10 @@
 <%= link_info.des%></br>
 <%= link_info.content%></br>
 by author <%= link_info.user.email %></br>
+<% if current_user.email ==  link_info.user.email %>
 <%= link_to "edit", edit_link_info_path(link_info.id) %></br>
 <%= link_to "delete", link_info_path(link_info.id), :method => :delete %></br>
+<% end %>
 </br></br>
 <% end %>
 
