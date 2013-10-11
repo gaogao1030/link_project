@@ -1,0 +1,12 @@
+<% @link_infos.each do |link_info| %>
+<%= link_to "#{link_info.title}", link_info_path(link_info.id) %></br>
+<%= link_info.des%></br>
+<%= link_info.content%></br>
+by author <%= link_info.user.email %></br>
+<%= link_to "edit", edit_link_info_path(link_info.id) %></br>
+<%= link_to "delete", link_info_path(link_info.id), :method => :delete %></br>
+</br></br>
+<% end %>
+
+<%= button_to 'add',new_link_info_path, :method => :get %>
+<%= button_to 'sign_out',destroy_user_session_path , :method => :delete %>

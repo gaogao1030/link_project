@@ -3,7 +3,10 @@
 <%= link_infos.des%></br>
 <%= link_infos.content%></br>
 by author <%= link_infos.user.email %></br>
+by author <%= link_infos.user.rememberable %></br>
 </br></br>
 <% end %>
 
 <%= button_to 'add',new_link_info_path, :method => :get %>
+
+<%= button_to 'sign_out',destroy_user_session_path %>
